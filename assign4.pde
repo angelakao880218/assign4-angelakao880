@@ -224,39 +224,39 @@ void draw() {
         rock1Y+=80;       
       }
         //rock2
-      float rock2Y=0;
-      float rock2YY=0;
-      for(int p=0; p<8; p++){
-        float rock2XX=p*160;
-        float rock2X=p*80;
-        image(stones[0][4],width-80*7-rock2X,width/8*8+rock2Y);
-        image(stones[0][4],width-80*6-rock2XX,width/8*8+rock2YY);
-        image(stones[0][4],width-80*5-rock2XX,width/8*9+rock2YY);
-        image(stones[0][4],width-80*3-rock2X,width/8*8+rock2Y);
-        image(stones[0][4],width-80*2-rock2XX,width/8*8+rock2YY);
-        image(stones[0][4],width-80-rock2XX,width/8*9+rock2YY);
-        image(stones[0][4],width-80-rock2X,width/8*10+rock2Y);
-        image(stones[0][4],width+80*2-rock2XX,width/8*8+rock2YY);
-        image(stones[0][4],width+80-rock2XX,width/8*11+rock2YY);
-        image(stones[0][4],width-80-rock2X,width/8*14+rock2Y);
-        rock2Y+=80;    
-        rock2YY+=160;
-      }
-      //rock3
-
-       for(int y3=1280; y3<1920; y3+=80){
-      for(int x=0; x<=width; x+=240){
-        if((y3-1280)%(80*3) == 0) {
-          image(stones[0][4], x+80, y3);
-          image(stones[0][4],x+80+80,y3);
+     for(int rocky=640; rocky<1280; rocky+=80){
+      for(int rockx=0; rockx<=width; rockx+=320){
+        if((rocky-640)%(80*4) == 0) {
+          image(stones[0][4], rockx+80, rocky);
+          image(stones[0][4],rockx+160,rocky);
         }
-        else if((y3-1280)/80 == 1 || (y3-1280)/80 == 4 || (y3-1280)/80 == 7){
-          image(stones[0][4], x, y3);
-          image(stones[0][4],x+80,y3);
+        else if((rocky-640)/80 == 3 || (rocky-640)/80 == 7){
+          image(stones[0][4], rockx+80, rocky);
+          image(stones[0][4],rockx+160,rocky);
         }
         else{
-          image(stones[0][4], x-80, y3);
-          image(stones[0][4],x,y3);
+          image(stones[0][4], rockx-80, rocky);
+          image(stones[0][4],rockx,rocky);
+
+        }
+      }
+    }
+      
+      //rock3
+
+       for(int rocky=1280; rocky<1920; rocky+=80){
+      for(int x=0; x<=width; x+=240){
+        if((rocky-1280)%(80*3) == 0) {
+          image(stones[0][4], x+80, rocky);
+          image(stones[0][4],x+80+80,rocky);
+        }
+        else if((rocky-1280)/80 == 1 || (rocky-1280)/80 == 4 || (rocky-1280)/80 == 7){
+          image(stones[0][4], x, rocky);
+          image(stones[0][4],x+80,rocky);
+        }
+        else{
+          image(stones[0][4], x-80, rocky);
+          image(stones[0][4],x,rocky);
         }
       }
     }
